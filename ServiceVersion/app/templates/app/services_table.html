@@ -1,0 +1,20 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            {% for h in header %}
+            <th>{{h}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in rows %}
+            <tr>
+                <td>{{r}}</td>
+                <td>{{r}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>{% endblock %}
