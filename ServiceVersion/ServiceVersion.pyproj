@@ -58,6 +58,13 @@
     <Compile Include="ServiceVersion\settings.py" />
     <Compile Include="ServiceVersion\urls.py" />
     <Compile Include="ServiceVersion\wsgi.py" />
+    <Compile Include="versionnotification\admin.py" />
+    <Compile Include="versionnotification\apps.py" />
+    <Compile Include="versionnotification\migrations\__init__.py" />
+    <Compile Include="versionnotification\models.py" />
+    <Compile Include="versionnotification\tests.py" />
+    <Compile Include="versionnotification\views.py" />
+    <Compile Include="versionnotification\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -73,6 +80,10 @@
     <Folder Include="backupnotification\migrations\" />
     <Folder Include="backupnotification\__pycache__\" />
     <Folder Include="ServiceVersion\" />
+    <Folder Include="versionnotification\" />
+    <Folder Include="versionnotification\migrations\" />
+    <Folder Include="versionnotification\templates\" />
+    <Folder Include="versionnotification\templates\versionnotification\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\services_table.html" />
@@ -109,6 +120,7 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="versionnotification\templates\versionnotification\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
