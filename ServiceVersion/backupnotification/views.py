@@ -4,37 +4,36 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView
 from rest_framework import filters
-from .models import BackupNotification, Region, Service
+from .models import Notification, Region, Service
 
-from .serializers import BackupNotificationSerializer, RegionSerializer, ServiceSerializer,BackupNotificatoinPostSerializer
+from .serializers import NotificationSerializer, RegionSerializer, ServiceSerializer
 
-class BackupNotificationView(ListAPIView):
-    serializer_class = BackupNotificationSerializer
+class NotificationView(ListAPIView):
+    serializer_class = NotificationSerializer
 
     def get(self, request):
         limit = request.query_params.get('limit', None)
         date_from = request.query_params.get('from', None)
         date_to = request.query_params.get('to', None)
-        queryset = BackupNotification.objects.all()
-        if date_from:
-            queryset = queryset.filter(eventdatetime__gte=date_from)
+        queryset = Notification.objects.all()
+        #if date_from:
+        #    queryset = queryset.filter(create_date__gte=date_from)
 
-        serializer = BackupNotificationSerializer(queryset, many=True)
+        serializer = NotificationSerializer(queryset, many=True)
         return Response({"result": serializer.data})
 
     def post(self,request):
-        backup = request.data.get('backup')
-        serializer = BackupNotificatoinPostSerializer(data=backup)
+        serializer = NotificationSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             backup_saved = serializer.save()
-        return Response({"result": "Successful created record about '{}' on host".format(backup_saved.name)})
+        return Response({"result": "Successful created record about {} backup on host {}".format(backup_saved.name,backup_saved.host.name)})
 
 
-class BackupNotificationViewNew(ListCreateAPIView):
-    serializer_class = BackupNotificationSerializer
+class NotificationViewNew(ListCreateAPIView):
+    serializer_class = NotificationSerializer
     search_fields = ['region', 'service', 'host']
     filter_backends = (filters.SearchFilter,)
-    queryset = BackupNotification.objects.all()
+    queryset = Notification.objects.all()
     
 class RegionView(ListAPIView):
     def get(self, request):

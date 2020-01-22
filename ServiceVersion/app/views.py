@@ -9,8 +9,6 @@ from .methods import get_mq_version
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from backupnotification.models import BackupNotification
-
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
