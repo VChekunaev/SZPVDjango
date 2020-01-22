@@ -26,6 +26,6 @@ def get_mq_version(*wsdl):
         response = requests.post(url,data=body,headers=headers)
         o = xmltodict.parse(response.text)
         j = json.loads(json.dumps(o))
-        vers = j["s:Envelope"]["s:Body"]["GetVersionResponse"]["GetVersionResult"]["a:ServiceVersion"]
+        vers = j["s:Envelope"]["s:Body"]["GetVersionResponse"]["GetVersionResult"]["a:SZPVAdmin"]
         result.append(vers)
     return result

@@ -2,8 +2,8 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <Name>ServiceVersion</Name>
-    <RootNamespace>ServiceVersion</RootNamespace>
+    <Name>SZPVAdmin</Name>
+    <RootNamespace>SZPVAdmin</RootNamespace>
     <TestFramework>Pytest</TestFramework>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
@@ -19,7 +19,7 @@
     <WorkingDirectory>.</WorkingDirectory>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <DjangoSettingsModule>ServiceVersion.settings</DjangoSettingsModule>
+    <DjangoSettingsModule>SZPVAdmin.settings</DjangoSettingsModule>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
   </PropertyGroup>
@@ -54,10 +54,10 @@
     <Compile Include="backupnotification\views.py" />
     <Compile Include="backupnotification\__init__.py" />
     <Compile Include="manage.py" />
-    <Compile Include="ServiceVersion\__init__.py" />
-    <Compile Include="ServiceVersion\settings.py" />
-    <Compile Include="ServiceVersion\urls.py" />
-    <Compile Include="ServiceVersion\wsgi.py" />
+    <Compile Include="SZPVAdmin\__init__.py" />
+    <Compile Include="SZPVAdmin\settings.py" />
+    <Compile Include="SZPVAdmin\urls.py" />
+    <Compile Include="SZPVAdmin\wsgi.py" />
     <Compile Include="versionnotification\admin.py" />
     <Compile Include="versionnotification\apps.py" />
     <Compile Include="versionnotification\migrations\__init__.py" />
@@ -79,7 +79,7 @@
     <Folder Include="backupnotification\" />
     <Folder Include="backupnotification\migrations\" />
     <Folder Include="backupnotification\__pycache__\" />
-    <Folder Include="ServiceVersion\" />
+    <Folder Include="SZPVAdmin\" />
     <Folder Include="versionnotification\" />
     <Folder Include="versionnotification\migrations\" />
     <Folder Include="versionnotification\templates\" />

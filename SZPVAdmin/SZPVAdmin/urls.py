@@ -1,5 +1,5 @@
 """
-Definition of urls for ServiceVersion.
+Definition of urls for SZPVAdmin.
 """
 
 from datetime import datetime

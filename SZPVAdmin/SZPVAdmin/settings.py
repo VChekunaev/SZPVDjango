@@ -1,5 +1,5 @@
 """
-Django settings for ServiceVersion project.
+Django settings for SZPVAdmin project.
 
 Based on 'django-admin startproject' using Django 2.1.2.
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ServiceVersion.urls'
+ROOT_URLCONF = 'SZPVAdmin.urls'
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ServiceVersion.wsgi.application'
+WSGI_APPLICATION = 'SZPVAdmin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
